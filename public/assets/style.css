@@ -489,3 +489,16 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 @media(max-width:1020px){.reporter-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:680px){.reporter-grid{grid-template-columns:1fr;gap:12px;margin-top:18px;}.reporter-card{padding:20px;min-height:150px;}.reporter-detail-hero{padding:25px 20px;gap:18px;margin-bottom:30px;align-items:flex-start;}.reporter-portrait-large{width:86px;height:86px;font-size:34px;}.reporter-detail-copy h1{font-size:29px;}.reporter-detail-copy p{font-size:13px;}.reporter-card h2{font-size:20px;}}
 @media(prefers-reduced-motion:reduce){.reporter-card{transition:none;}}
+
+
+/* v12: 8개 뉴스 분야에 맞춘 네비게이션 줄바꿈 — PC와 모바일 대응 */
+@media (min-width:761px){
+ .main-nav .nav-inner{height:auto;min-height:53px;display:flex;align-items:center;justify-content:center;}
+ .main-nav .nav-items{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;column-gap:18px;row-gap:0;padding:0 5px;}
+ .main-nav .nav-item{white-space:nowrap;padding:15px 2px;font-size:12px;}
+ .main-nav .nav-right{display:none;}
+}
+@media (max-width:760px){
+ .main-nav.open .nav-items{display:flex;flex-wrap:wrap;gap:0;}
+ .main-nav.open .nav-item{min-width:96px;text-align:center;}
+}
