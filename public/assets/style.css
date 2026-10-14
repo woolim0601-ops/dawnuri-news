@@ -456,49 +456,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 
 /* v10: 모든 페이지의 상단 제호에는 텍스트만 표시. 소개 페이지의 신문 목업과 “이름과 상징”에는 공식 로고를 유지. */
 
-
-/* v11: 기자 소개 · 기자별 프로필 */
-.reporter-list-page,.reporter-detail-page{padding-bottom:85px;}
-.reporter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:26px 0 42px;}
-.reporter-card{display:flex;align-items:flex-start;gap:18px;min-height:198px;padding:26px;border:1px solid #d8e6ee;background:#fff;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;text-decoration:none;color:#1f3442;}
-.reporter-card:hover,.reporter-card:focus-visible{border-color:#69b9ce;box-shadow:0 9px 28px #0f27470f;transform:translateY(-2px);}
-.reporter-portrait{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;overflow:hidden;width:73px;height:73px;border-radius:50%;background:linear-gradient(145deg,#d4edf7,#a2d6e4);border:1px solid #b2d8e5;color:#19577b;font:750 29px/1 'Paperlogy',var(--font);}
-.reporter-portrait-img{width:100%;height:100%;object-fit:cover;display:block;}
-.reporter-card-copy{min-width:0;}
-.reporter-role{display:block;color:#177ca2;font-size:12px;font-weight:750;margin:2px 0 7px;}
-.reporter-card h2{font:750 22px/1.35 'Paperlogy',var(--font);letter-spacing:-.04em;color:#0f2747;margin:0 0 10px;}
-.reporter-card p{font-size:13px;line-height:1.7;color:#6a7b87;margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line;}
-.reporter-article-count{display:inline-flex;align-items:center;gap:5px;color:#1e6fa8;font-size:12px;font-weight:700;}
-.reporter-empty{background:#f7fbfe;color:#5e7788;padding:55px 20px;margin:20px 0;text-align:center;border:1px solid #d8e6ee;}
-.reporter-detail-page .breadcrumb{margin-top:24px;}
-.reporter-detail-hero{display:flex;align-items:center;gap:36px;padding:40px;margin:20px 0 52px;border-top:3px solid #0f2747;border-bottom:1px solid #d8e6ee;background:linear-gradient(120deg,#f7fbfe 40%,#ecf7fb 100%);}
-.reporter-portrait-large{width:142px;height:142px;font-size:53px;}
-.reporter-detail-copy .overline{font-size:11px;font-weight:800;letter-spacing:.14em;color:#1e6fa8;}
-.reporter-detail-copy h1{font:800 clamp(31px,4vw,46px)/1.25 'Paperlogy',var(--font);letter-spacing:-.045em;color:#0f2747;margin:10px 0 7px;}
-.reporter-detail-copy>strong{font-size:15px;color:#1e6fa8;}
-.reporter-detail-copy p{font-size:15px;color:#4c6678;line-height:1.85;white-space:pre-line;max-width:620px;margin:19px 0 0;}
-.reporter-writings{padding-bottom:20px;}
-.reporter-byline-link{color:#0f2747;text-decoration:underline;text-decoration-color:#a2d6e4;text-underline-offset:4px;}
-.reporter-byline-link:hover,.reporter-byline-link:focus-visible{color:#1e6fa8;}
-.article-reporter-card{display:flex;align-items:center;gap:18px;background:#f7fbfe;padding:21px;margin-top:27px;border:1px solid #d8e6ee;text-decoration:none;}
-.article-reporter-card .reporter-portrait{width:58px;height:58px;font-size:24px;}
-.article-reporter-card>div{display:flex;flex-direction:column;gap:4px;}
-.article-reporter-card small{font-size:11px;color:#678297;}
-.article-reporter-card strong{color:#0f2747;font:750 19px/1.4 'Paperlogy',var(--font);}
-.article-reporter-card span:not(.reporter-portrait){display:inline-flex;align-items:center;gap:5px;color:#1e6fa8;font-size:12px;}
-@media(max-width:1020px){.reporter-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
-@media(max-width:680px){.reporter-grid{grid-template-columns:1fr;gap:12px;margin-top:18px;}.reporter-card{padding:20px;min-height:150px;}.reporter-detail-hero{padding:25px 20px;gap:18px;margin-bottom:30px;align-items:flex-start;}.reporter-portrait-large{width:86px;height:86px;font-size:34px;}.reporter-detail-copy h1{font-size:29px;}.reporter-detail-copy p{font-size:13px;}.reporter-card h2{font-size:20px;}}
-@media(prefers-reduced-motion:reduce){.reporter-card{transition:none;}}
-
-
-/* v12: 8개 뉴스 분야에 맞춘 네비게이션 줄바꿈 — PC와 모바일 대응 */
-@media (min-width:761px){
- .main-nav .nav-inner{height:auto;min-height:53px;display:flex;align-items:center;justify-content:center;}
- .main-nav .nav-items{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;column-gap:18px;row-gap:0;padding:0 5px;}
- .main-nav .nav-item{white-space:nowrap;padding:15px 2px;font-size:12px;}
- .main-nav .nav-right{display:none;}
-}
-@media (max-width:760px){
- .main-nav.open .nav-items{display:flex;flex-wrap:wrap;gap:0;}
- .main-nav.open .nav-item{min-width:96px;text-align:center;}
+/* CONTACT 제목은 한 줄로 표시하고 모바일에서는 크기를 자동 조정합니다. */
+.about-contact h2 { white-space: nowrap; }
+@media (max-width: 760px) {
+  .about-contact h2 { font-size: clamp(17px, 5vw, 30px); }
 }
