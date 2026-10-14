@@ -42,14 +42,20 @@ content:
         required: true
         options:
           values:
-            - name: school
-              label: 학교
-            - name: local
-              label: 지역
             - name: society
               label: 사회
+            - name: economy
+              label: 경제
+            - name: sports
+              label: 스포츠
             - name: culture
               label: 문화
+            - name: international
+              label: 국제
+            - name: local
+              label: 지역
+            - name: education
+              label: 교육·청소년
             - name: feature
               label: 기획
       - name: author
