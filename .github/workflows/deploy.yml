@@ -1,0 +1,78 @@
+name: Deploy Dawnuri News
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Dawnuri News
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build news pages
+        run: npm run build
+      - name: Adjust links for the GitHub Pages project URL
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          repo = os.environ['GITHUB_REPOSITORY'].split('/')[-1]
+          owner = os.environ['GITHUB_REPOSITORY'].split('/')[0]
+          prefix = '' if repo.lower() == f'{owner.lower()}.github.io' else f'/{repo}'
+          site_dir = Path('dist')
+
+          for filename in site_dir.rglob('*.html'):
+              html = filename.read_text(encoding='utf-8')
+              html = re.sub(r'''(\b(?:href|src|action|poster)=["'])/(?!/)''',
+                            lambda match: match.group(1) + prefix + '/', html)
+              # Embedded search records are JSON, not regular HTML links.
+              html = html.replace('"href":"/', '"href":"' + prefix + '/')
+              html = html.replace('"cover":"/', '"cover":"' + prefix + '/')
+              filename.write_text(html, encoding='utf-8')
+
+          main_js = site_dir / 'assets' / 'main.js'
+          if main_js.exists():
+              js = main_js.read_text(encoding='utf-8')
+              js = js.replace("'/search/'", "'" + prefix + "/search/'")
+              main_js.write_text(js, encoding='utf-8')
+
+          # Preserve static assets that GitHub Pages would otherwise treat as Jekyll input.
+          (site_dir / '.nojekyll').touch()
+          print(f'Prepared GitHub Pages site at {prefix or "/"}')
+          PY
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload generated website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
