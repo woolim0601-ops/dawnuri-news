@@ -1,0 +1,12 @@
+{
+  "name": "dawnuri-news",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "새벽누리 청소년 언론 뉴스 사이트",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node server.mjs"
+  },
+  "engines": { "node": ">=18" }
+}
