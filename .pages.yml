@@ -42,32 +42,22 @@ content:
         required: true
         options:
           values:
-            - name: school
-              label: 학교
-            - name: local
-              label: 지역
             - name: society
               label: 사회
-            - name: culture
-              label: 문화
-            - name: feature
-              label: 기획
-            - name: sports
-              label: 스포츠
-            - name: education
-              label: 교육
             - name: economy
               label: 경제
-            - name: science
-              label: 과학·기술
-            - name: environment
-              label: 환경
-            - name: politics
-              label: 정치
+            - name: sports
+              label: 스포츠
+            - name: culture
+              label: 문화
             - name: world
               label: 국제
-            - name: opinion
-              label: 오피니언
+            - name: local
+              label: 지역
+            - name: education
+              label: 교육·청소년
+            - name: feature
+              label: 기획
       - name: author
         label: 기자 이름
         type: string
@@ -87,6 +77,22 @@ content:
         type: image
         options:
           media: photos
+      - name: cover_alt
+        label: 대표 사진 설명 (대체 텍스트)
+        type: string
+        description: 사진에 무엇이 보이는지 짧고 구체적으로 적어주세요. 화면읽기 프로그램에 사용됩니다.
+      - name: cover_caption
+        label: 사진 설명 (사진 아래 표시)
+        type: text
+        description: 언제·어디서·무엇을 촬영했는지 확인한 사실만 적어주세요.
+      - name: cover_credit
+        label: 사진 제공·촬영자 표기
+        type: string
+        description: 예) 새벽누리 자료사진, 사진 제공 학교 측 (허락과 출처 확인)
+      - name: reporter_slug
+        label: 기자 소개 연결 ID (선택)
+        type: string
+        description: 기자 소개 관리에 입력한 영문 ID와 같으면 이름을 눌러 프로필로 이동합니다. 비워두면 단순 기자명으로 표시됩니다.
       - name: status
         label: 발행 상태
         type: select
@@ -113,6 +119,44 @@ content:
         options:
           format: markdown
           media: photos
+  - name: reporters
+    label: 공개 기자 소개
+    type: collection
+    path: content/reporters
+    format: json
+    filename: "{fields.slug}.json"
+    view:
+      fields: [display_name, role, beat, visible]
+      primary: display_name
+    fields:
+      - name: display_name
+        label: 공개할 기자 이름 또는 필명
+        type: string
+        required: true
+      - name: slug
+        label: 기자 소개 ID (영문·숫자·하이픈)
+        type: string
+        required: true
+        pattern: "^[a-z0-9-]+$"
+      - name: role
+        label: 역할 (기자·편집장 등)
+        type: string
+      - name: beat
+        label: 담당 분야 (사회·스포츠 등)
+        type: string
+      - name: bio
+        label: 기자 소개글
+        type: text
+      - name: photo
+        label: 공개용 프로필 사진 (선택)
+        type: image
+        options:
+          media: photos
+      - name: visible
+        label: 홈페이지 공개하기 (본인 동의 후)
+        type: boolean
+        default: false
+        description: 공개 저장소에서는 이 옵션을 꺼도 JSON 파일 내용 자체는 볼 수 있습니다. 공개 가능한 내용만 입력하세요.
   - name: issues
     label: 종이신문 아카이브
     type: collection
@@ -162,6 +206,10 @@ content:
       - name: about
         label: 소개 글
         type: text
+      - name: reporter_portal_url
+        label: 기자실 로그인 주소 (실제 보안 서버 연결 후)
+        type: string
+        description: 보호자와 별도 로그인 서버를 실제 배포하고 보안 검증한 뒤 https 주소를 입력하세요. 그전에는 비워두세요.
       - name: contact_email
         label: 공개 제보 이메일 (없으면 비워두기)
         type: string
