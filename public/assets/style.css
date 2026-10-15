@@ -491,3 +491,49 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
  .about-body{padding-top:54px;padding-bottom:58px;gap:12px;}
  .about-body h2{font-size:clamp(26px,6vw,33px);}
 }
+
+/* v13: 정확히 8개 공식 뉴스 분야, 드롭다운 없음 */
+.main-nav .nav-inner{width:100%;}
+.main-nav .nav-items{display:flex;flex-wrap:wrap;justify-content:center;gap:0 clamp(10px,1.2vw,18px);align-items:center;}
+.main-nav .nav-item{white-space:nowrap;}
+@media (max-width:800px){
+  .main-nav .nav-items{justify-content:flex-start;gap:0 5px;}
+  .main-nav .nav-item{padding-left:12px;padding-right:12px;}
+}
+
+
+/* DAWNURI v15 — 기자 소개 / 사진 설명 */
+.byline-link{color:inherit;text-decoration:underline;text-decoration-color:#9bc8de;text-underline-offset:3px;text-decoration-thickness:1px}
+.byline-link:hover{color:#1E6FA8}
+.caption-img{max-width:850px;line-height:1.55;word-break:keep-all;color:#5b7181!important;font-size:12px!important;text-align:left!important;margin-top:9px!important;margin-bottom:28px!important}
+.photo-credit{color:#79909e;margin-left:.45em;font-size:11px}
+.reporters-page{padding-bottom:92px}
+.reporter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:38px 0}
+.reporter-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #dbe8ef;background:#fff;border-radius:7px;transition:transform .18s,box-shadow .18s;min-width:0}
+.reporter-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(15,39,71,.1)}
+.reporter-photo{height:195px;background:linear-gradient(140deg,#eaf4fa,#cbe5f1);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.reporter-photo img{width:100%;height:100%;object-fit:cover}
+.reporter-photo>span{font:800 58px/1 'Paperlogy','Pretendard',sans-serif;color:#34769f}
+.reporter-card-body{padding:20px 20px 24px}
+.reporter-role{display:inline-block;color:#1e6fa8;font-size:12px;font-weight:800;letter-spacing:.02em}
+.reporter-card-body h2,.reporter-profile h1{color:#0f2747;font-family:'Paperlogy','Pretendard',sans-serif;letter-spacing:-.05em}
+.reporter-card-body h2{font-size:23px;line-height:1.4;margin:9px 0 8px}
+.reporter-card-body p{font-size:13px;line-height:1.75;color:#617785;margin:8px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.reporter-card-body .reporter-beat{color:#1b608e;font-weight:650}
+.reporter-count{margin-top:18px;color:#1e6fa8;font-size:12px;font-weight:800;display:flex;align-items:center;gap:5px}
+.reporter-empty{border:1px solid #dbe8ef;background:#f7fbfe;padding:38px 32px;margin:38px 0 75px}
+.reporter-empty h2{margin:0 0 10px;color:#0f2747;font-size:21px}
+.reporter-empty p{margin:0;color:#607687;font-size:14px;line-height:1.8}
+.reporter-profile{display:flex;align-items:center;gap:34px;margin:30px 0 45px;padding:28px;background:#f7fbfe;border:1px solid #dbe8ef}
+.reporter-profile .reporter-photo-large{width:175px;height:175px;flex:0 0 175px;border-radius:5px}
+.reporter-profile h1{font-size:36px;margin:8px 0}
+.reporter-profile .reporter-bio{max-width:670px;line-height:1.85;font-size:15px;color:#556e7e}
+.reporter-profile .reporter-beat{font-size:13px;color:#1e6fa8;font-weight:650}
+.about-reporters-teaser{display:flex;align-items:center;justify-content:space-between;gap:28px;border-top:1px solid #dbe8ef;border-bottom:1px solid #dbe8ef;padding-top:28px;padding-bottom:28px;margin-bottom:66px}
+.about-reporters-teaser h2{font:750 23px/1.35 'Paperlogy','Pretendard',sans-serif;color:#0f2747;margin:9px 0}
+.about-reporters-teaser p{font-size:13px;color:#687d8b;max-width:610px;margin:0}
+.about-reporters-teaser>a{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;border-radius:3px;background:#0f2747;color:#fff;padding:12px 16px;font-weight:700;font-size:12px}
+@media(max-width:850px){.reporter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-reporters-teaser{flex-wrap:wrap}}
+@media(max-width:540px){.reporter-grid{grid-template-columns:1fr}.reporter-profile{padding:18px;flex-direction:column;align-items:flex-start}.reporter-profile .reporter-photo-large{width:100%;max-width:220px;flex:auto}.reporter-profile h1{font-size:30px}.about-reporters-teaser{margin-bottom:40px}.about-reporters-teaser>a{white-space:normal}}
+
+.inline-photo{margin:24px 0 30px}.inline-photo .article-inline-image{display:block;margin:0 auto;max-width:100%}.inline-photo figcaption{font-size:12px;color:#61788a;margin-top:9px;line-height:1.6}
