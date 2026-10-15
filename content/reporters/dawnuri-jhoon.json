@@ -1,6 +1,7 @@
 {
-  "name": "강재훈",
+  "display_name": "강재훈",
   "slug": "dawnuri-jhoon",
   "role": "취재장",
-  "published": true
+  "bio": "안녕하세요. 강재훈 기자입니다.",
+  "visible": true
 }
