@@ -1,7 +1,7 @@
 {
-  "name": "박부용",
+  "display_name": "박부용",
   "slug": "dawnuri-buyung",
   "role": "기자",
   "bio": "안녕하세요. 박부용 기자입니다.",
-  "published": true
+  "visible": true
 }
