@@ -644,3 +644,6 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
  .footer-lower .footer-registration-info{top:0;padding:0!important}
  .footer-copyright{margin-top:16px!important}
 }
+
+/* Lift only the right-side brand and copyright text slightly */
+.footer-lower-tagline{transform:translateY(-6px)}
