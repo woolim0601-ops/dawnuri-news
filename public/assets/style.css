@@ -651,3 +651,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 /* Center the two registration lines */
 .footer-lower .footer-registration-info{flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;gap:3px!important}
 .footer-lower .footer-registration-info>span{display:block;width:100%;text-align:center}
+
+/* Registration heading and single centered detail line */
+.footer-registration-info-heading{display:block;font-size:13px;font-weight:800;line-height:1.5;text-align:center}
+.footer-registration-info-details{display:block;font-size:12px;line-height:1.6;text-align:center;white-space:nowrap}
+@media(max-width:600px){.footer-registration-info-details{white-space:normal}}
