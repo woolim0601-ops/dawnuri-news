@@ -589,13 +589,13 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 
 
 /* DAWNURI v18 — 단체 등록정보는 번호 입력 시에만 표시 */
-.footer-registration{
+.footer-registration-info{
   display:flex;flex-wrap:wrap;align-items:center;column-gap:22px;row-gap:7px;
   padding:20px 0;margin-top:18px;border-top:1px solid rgba(255,255,255,.16);
   font-size:12px;line-height:1.7;letter-spacing:0;color:inherit;opacity:.86;
 }
-.footer-registration .footer-registration-label{font-weight:800;opacity:1;}
-@media(max-width:600px){.footer-registration{flex-direction:column;align-items:flex-start;gap:4px;}}
+.footer-registration-info .footer-registration-info-label{font-weight:800;opacity:1;}
+@media(max-width:600px){.footer-registration-info{flex-direction:column;align-items:flex-start;gap:4px;}}
 
 /* Footer lower row: simple separator lines, no card outlines */
 .footer-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr) minmax(0,.9fr);gap:28px 42px}
@@ -605,8 +605,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .footer-lower .footer-cta p{width:100%;margin:0;color:#b5c7c8;text-align:left}
 .footer-lower .light-link{justify-content:flex-start;margin-top:10px;max-width:100%}
 .footer-lower .contact-soon{margin-top:10px}
-.footer-lower .footer-registration{grid-column:2;grid-row:1;align-self:start;justify-content:center;align-content:center;flex-direction:row;flex-wrap:wrap;gap:5px 12px;margin:0;padding:0 12px 8px;border:0;opacity:1;text-align:center;min-width:0}
-.footer-lower .footer-registration-label{flex-basis:100%}
+.footer-lower .footer-registration-info{grid-column:2;grid-row:1;align-self:start;justify-content:center;align-content:center;flex-direction:row;flex-wrap:wrap;gap:5px 12px;margin:0;padding:0 12px 8px;border:0;opacity:1;text-align:center;min-width:0}
+.footer-lower .footer-registration-info-label{flex-basis:100%}
 .footer-lower-tagline{grid-column:3;grid-row:1;justify-self:end;align-self:center;align-items:flex-end;text-align:right;color:#89dce9;font-size:13px;white-space:normal;min-width:0}
 .footer-copyright{display:block;margin-top:9px;color:#8fa9ab;font-size:10px;line-height:1.5}
 .footer-bottom{justify-content:flex-end}
@@ -618,9 +618,9 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 @media(max-width:600px){
   .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
   .footer-lower{grid-template-columns:minmax(0,1fr);gap:16px;padding:18px 0}
-  .footer-lower .footer-cta,.footer-lower .footer-registration,.footer-lower-tagline{grid-column:1;grid-row:auto}
+  .footer-lower .footer-cta,.footer-lower .footer-registration-info,.footer-lower-tagline{grid-column:1;grid-row:auto}
   .footer-lower .footer-cta{align-items:flex-start}
-  .footer-lower .footer-registration{justify-content:center;padding:0}
+  .footer-lower .footer-registration-info{justify-content:center;padding:0}
   .footer-lower-tagline{justify-self:end;align-items:flex-end}
 }
 
@@ -631,3 +631,16 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 /* Remove every card-like outline in the lower footer row */
 .footer-lower,.footer-lower::before,.footer-lower::after,.footer-lower *,.footer-lower *::before,.footer-lower *::after{border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important}
 .footer-lower{border-top:1px solid rgba(255,255,255,.2)!important;border-bottom:1px solid rgba(255,255,255,.2)!important;border-left:0!important;border-right:0!important}
+
+
+/* Final footer alignment: only the two horizontal separator lines remain */
+.footer-lower{border-top:1px solid #38505a!important;border-bottom:1px solid #38505a!important;border-left:0!important;border-right:0!important;padding:28px 0!important;margin-top:30px;gap:28px}
+.footer-lower,.footer-lower::before,.footer-lower::after,.footer-lower *,.footer-lower *::before,.footer-lower *::after{outline:0!important;box-shadow:none!important}
+.footer-lower>*{border:0!important;border-radius:0!important;background:transparent!important;min-width:0}
+.footer-lower .footer-registration-info{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;outline:0!important;padding:0 12px 8px!important;margin:0!important;position:relative;top:-5px;overflow-wrap:anywhere}
+.footer-copyright{margin-top:20px!important;line-height:1.7}
+@media(max-width:600px){
+ .footer-lower{padding:22px 0!important;gap:18px}
+ .footer-lower .footer-registration-info{top:0;padding:0!important}
+ .footer-copyright{margin-top:16px!important}
+}
