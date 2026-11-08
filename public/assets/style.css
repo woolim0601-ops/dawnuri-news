@@ -656,3 +656,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .footer-registration-info-heading{display:block;font-size:13px;font-weight:800;line-height:1.5;text-align:center}
 .footer-registration-info-details{display:block;font-size:12px;line-height:1.6;text-align:center;white-space:nowrap}
 @media(max-width:600px){.footer-registration-info-details{white-space:normal}}
+
+/* Match the reference typography in the centered registration block */
+.footer-registration-info{gap:7px!important}
+.footer-registration-info-heading{font-size:18px!important;font-weight:800!important;line-height:1.5!important;text-align:center!important}
+.footer-registration-info-details{font-size:13px!important;line-height:1.75!important;text-align:center!important}
