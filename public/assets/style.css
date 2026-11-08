@@ -673,3 +673,12 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .footer-registration-info-heading{font-size:13px!important;font-weight:700!important;line-height:1.5!important;text-align:center!important}
 .footer-registration-info-details{display:flex!important;flex-direction:column!important;gap:0!important;font-size:14px!important;line-height:1.8!important;text-align:center!important;white-space:normal!important}
 .footer-registration-info-details>span{display:block!important;width:100%;text-align:center!important}
+
+/* On phones, align every item in the lower footer to the same left edge */
+@media(max-width:600px){
+  .footer-lower .footer-cta{align-items:flex-start!important;text-align:left!important}
+  .footer-lower .footer-registration-info{align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important}
+  .footer-registration-info-heading,.footer-registration-info-details,.footer-registration-info-details>span{width:100%!important;text-align:left!important}
+  .footer-lower-tagline{justify-self:start!important;align-items:flex-start!important;text-align:left!important;transform:none!important}
+  .footer-copyright{text-align:left!important}
+}
