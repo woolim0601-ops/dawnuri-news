@@ -661,3 +661,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .footer-registration-info{gap:7px!important}
 .footer-registration-info-heading{font-size:18px!important;font-weight:800!important;line-height:1.5!important;text-align:center!important}
 .footer-registration-info-details{font-size:13px!important;line-height:1.75!important;text-align:center!important}
+
+/* Match the centered registration text to the left footer heading and copy */
+.footer-registration-info{gap:4px!important}
+.footer-registration-info-heading{font-size:13px!important;font-weight:700!important;line-height:1.5!important;text-align:center!important}
+.footer-registration-info-details{font-size:13px!important;line-height:1.8!important;text-align:center!important}
