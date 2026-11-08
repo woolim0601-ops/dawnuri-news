@@ -586,3 +586,19 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
   .footer .footer-grid>.footer-links{column-gap:16px;row-gap:12px;}
   .footer .footer-grid>.footer-links a{font-size:12px;}
 }
+
+
+/* DAWNURI v18 — 단체 등록정보는 번호 입력 시에만 표시 */
+.footer-registration{
+  display:flex;flex-wrap:wrap;align-items:center;column-gap:22px;row-gap:7px;
+  padding:20px 0;margin-top:18px;border-top:1px solid rgba(255,255,255,.16);
+  font-size:12px;line-height:1.7;letter-spacing:0;color:inherit;opacity:.86;
+}
+.footer-registration .footer-registration-label{font-weight:800;opacity:1;}
+@media(max-width:600px){.footer-registration{flex-direction:column;align-items:flex-start;gap:4px;}}
+
+/* 새벽누리 v16: 기자 카드/상세페이지 사진을 원본 비율과 관계없이 1:1로 표시 */
+.reporter-card .reporter-photo{width:100%;height:auto;aspect-ratio:1/1;overflow:hidden;}
+.reporter-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+.reporter-profile .reporter-photo-large{width:175px;height:175px;aspect-ratio:1/1;flex:0 0 175px;}
+@media(max-width:540px){.reporter-profile .reporter-photo-large{width:100%;height:auto;max-width:220px;aspect-ratio:1/1;flex:auto;}}
