@@ -623,3 +623,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
   .footer-lower .footer-registration{justify-content:center;padding:0}
   .footer-lower-tagline{justify-self:end;align-items:flex-end}
 }
+
+/* Explicitly suppress any old card styling inside the footer row */
+.footer-lower>*{border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important;background:transparent!important}
+.footer-lower{border-left:0!important;border-right:0!important}
