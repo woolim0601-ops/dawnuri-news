@@ -1,4 +1,4 @@
-/* DAWNURI NEWS 3.0 — Paperlogy headlines × Pretendard body
+/* DAWNURI NEWS 3.0 �� Paperlogy headlines 횞 Pretendard body
    Paperlogy: https://github.com/fonts-archive/Paperlogy
    Pretendard: https://github.com/orioncactus/pretendard
    Webfonts are loaded from public CDNs; no font files are included.
@@ -11,8 +11,8 @@
 @media(max-width:475px){.shell{padding-left:17px;padding-right:17px}.masthead{gap:4px}.brand-name{font-size:25px}.brand-tag{font-size:7.3px}.lead-aside{gap:12px}.hero-copy h1{font-size:24px}.side-top h3{font-size:14px}.news-ticker{display:none}.content-grid{margin-top:42px}.block-head h2{font-size:24px}.latest-item{grid-template-columns:minmax(0,1fr) 100px;gap:11px}.latest-num{display:none}.latest-body h3{font-size:14px}.latest-body p{display:none}.latest-body .eyebrow{font-size:10px}.archive-promo{padding:27px 22px;min-height:245px}.archive-promo-copy h2{font-size:20px}.archive-promo-copy p{font-size:11px}.archive-promo-copy a{font-size:11px;padding:9px}.paper-deco{width:75px;height:129px;transform:rotate(8deg) translateX(15px)}.paper-deco>span{font-size:11px}.paper-deco>div{height:20px}.paper-deco b{font-size:8px}.paper-deco i{font-size:4px}.cat-strip .strip-list{display:block}.listing-grid{gap:30px 12px}.news-card--tile h3{font-size:14px}.news-card--tile p{display:none}.news-card--tile .news-meta{display:block}.news-card--tile .news-meta span+span{display:none}.article-title-area h1{font-size:26px}.article-deck{font-size:14px}.article-byline{gap:4px}.article-prose{font-size:15px}.article-prose p:first-child{font-size:17px}.issue-grid{gap:14px}.issue{padding:10px}.issue-cover{height:223px;padding:13px}.issue-cover b{font-size:24px}.issue-cover i{font-size:9px}.issue-info h3{font-size:16px}.issue-info p{font-size:11px}.footer-grid{gap:20px}.footer-bottom{align-items:start;gap:6px;flex-direction:column}.search-dialog{margin:9vh 14px;padding:24px 18px}.search-input-wrap{gap:5px}.search-input-wrap input{font-size:14px}.search-input-wrap button{font-size:12px;padding:8px}}
 
 /* ============================================================
-   DAWNURI 2.0 — 전통적인 신문의 편집 감각 × 모던 뉴스 플랫폼
-   시각적 테마만 변경합니다. CMS, 기사 경로, 검색 로직은 유지됩니다.
+   DAWNURI 2.0 �� �꾪넻�곸씤 �좊Ц�� �몄쭛 媛먭컖 횞 紐⑤뜕 �댁뒪 �뚮옯��
+   �쒓컖�� �뚮쭏留� 蹂�寃쏀빀�덈떎. CMS, 湲곗궗 寃쎈줈, 寃��� 濡쒖쭅�� �좎��⑸땲��.
    ============================================================ */
 :root{
   --ink:#20252a;
@@ -37,7 +37,7 @@ a:hover{color:var(--red)}
 .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;display:flex;align-items:center;justify-content:center;min-width:340px}
 .brand-mark{display:none}
 .brand-copy{align-items:center;gap:0}
-.brand-copy:before{content:'DAWNURI  ·  INDEPENDENT YOUTH PRESS';font:700 10px Georgia,serif;letter-spacing:.21em;color:#9c5962;margin-bottom:10px;white-space:nowrap}
+.brand-copy:before{content:'DAWNURI  쨌  INDEPENDENT YOUTH PRESS';font:700 10px Georgia,serif;letter-spacing:.21em;color:#9c5962;margin-bottom:10px;white-space:nowrap}
 .brand-name{font-family:var(--editorial-serif);font-size:55px;letter-spacing:-.095em;font-weight:800;line-height:1.22;color:#1e2730}
 .brand-dot{color:var(--red)}
 .brand-tag{margin-top:4px;font-size:11px;color:#717775;letter-spacing:.09em;font-weight:500}
@@ -193,10 +193,10 @@ a:hover{color:var(--red)}
 
 
 /* ===========================================================
-   DAWNURI 3.0 — 깨끗한 고딕 중심의 현대적 신문 타이포그래피
-   - 기사 제목 / 제호 : Paperlogy
-   - 기사 본문 / 메뉴 / 메타 정보 : Pretendard Variable
-   - v2 기사, 콘텐츠, 반응형 레이아웃은 그대로 유지
+   DAWNURI 3.0 �� 源⑤걮�� 怨좊뵓 以묒떖�� �꾨��� �좊Ц ���댄룷洹몃옒��
+   - 湲곗궗 �쒕ぉ / �쒗샇 : Paperlogy
+   - 湲곗궗 蹂몃Ц / 硫붾돱 / 硫뷀� �뺣낫 : Pretendard Variable
+   - v2 湲곗궗, 肄섑뀗痢�, 諛섏쓳�� �덉씠�꾩썐�� 洹몃�濡� �좎�
    =========================================================== */
 :root {
   --font: 'Pretendard Variable', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
@@ -237,8 +237,8 @@ button, input, textarea, select { font-family: var(--font); }
 
 /* ================================================================
    DAWNURI 4.0  |  OCEAN EDITORIAL
-   정통 뉴스 타이포그래피 + 모던 오션 블루
-   해군색 60% / 바다색·청록색 포인트 40%
+   �뺥넻 �댁뒪 ���댄룷洹몃옒�� + 紐⑤뜕 �ㅼ뀡 釉붾（
+   �닿뎔�� 60% / 諛붾떎�됀룹껌濡앹깋 �ъ씤�� 40%
    Paperlogy headline, Pretendard body fonts carried over from v3.
    ================================================================ */
 :root {
@@ -276,7 +276,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .nav-item.selected {color:var(--sea-blue);}
 .nav-item.selected:after {background:var(--sea-teal);height:3px;}
 .nav-right {color:#6E92A9;}
-/* 데모 경고 색은 바다색과 구별되도록 유지 */
+/* �곕え 寃쎄퀬 �됱� 諛붾떎�됯낵 援щ퀎�섎룄濡� �좎� */
 .demo-banner {background:#FFF9EA;border-color:#F0DEB5;color:#71572C;}
 .demo-banner strong {color:#8F5D19;}
 .dayline {border-bottom:1px solid var(--line);color:#668297;}
@@ -359,10 +359,10 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 
 
 /* ================================================================
-   DAWNURI 5.0 — Header typography refinements
-   상단 메뉴는 살짝 굵게, 제호 ‘새벽누리’는 Paperlogy Medium,
-   제호 및 하단의 장식 마침표는 HTML에서 제거.
-   기사 제목/본문의 서체·굵기와 Ocean v4 색상은 유지.
+   DAWNURI 5.0 �� Header typography refinements
+   �곷떒 硫붾돱�� �댁쭩 援듦쾶, �쒗샇 �섏깉踰쎈늻由р�숇뒗 Paperlogy Medium,
+   �쒗샇 諛� �섎떒�� �μ떇 留덉묠�쒕뒗 HTML�먯꽌 �쒓굅.
+   湲곗궗 �쒕ぉ/蹂몃Ц�� �쒖껜쨌援듦린�� Ocean v4 �됱긽�� �좎�.
    ================================================================ */
 .utility, .utility-right {font-weight:600;}
 .brand-copy:before {font-weight:800;}
@@ -374,8 +374,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 
 
 /* ========================================================
-   DAWNURI v6 — 소개 페이지 전용 바다색 뉴스형 히어로
-   기존 5차 Paperlogy/Pretendard 디자인, 기사 기능은 유지
+   DAWNURI v6 �� �뚭컻 �섏씠吏� �꾩슜 諛붾떎�� �댁뒪�� �덉뼱濡�
+   湲곗〈 5李� Paperlogy/Pretendard �붿옄��, 湲곗궗 湲곕뒫�� �좎�
    ======================================================== */
 .about-feature-shell{margin-top:44px;margin-bottom:0;}
 .about-feature{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.82fr);align-items:center;gap:42px;min-height:445px;padding:68px 6.2%;background:linear-gradient(112deg,#102747 2%,#11476a 62%,#1b7594 100%);border-top:6px solid #2FA7B9;overflow:hidden;color:#fff;}
@@ -450,20 +450,20 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 @media(max-width:760px){.brand{gap:8px;}.identity-section{grid-template-columns:1fr;gap:18px;margin-top:32px;margin-bottom:40px;}.identity-card{min-height:140px;padding:26px 22px;}.identity-intro h2{font-size:25px;}}
 @media(max-width:450px){.brand{gap:6px;}.about-paper-brand img{width:27px;height:27px;}.about-paper-brand .about-paper-head{font-size:18px;}}
 
-/* v9: 메인 화면에서는 공식 일출 심벌을 숨기고 굵은 글자 제호만 사용.
-   소개 페이지의 공식 로고는 그대로 유지. */
+/* v9: 硫붿씤 �붾㈃�먯꽌�� 怨듭떇 �쇱텧 �щ쾶�� �④린怨� 援듭� 湲��� �쒗샇留� �ъ슜.
+   �뚭컻 �섏씠吏��� 怨듭떇 濡쒓퀬�� 洹몃�濡� �좎�. */
 .home .about-snippet-label {display:block;font-family:'Paperlogy',sans-serif;font-weight:750;font-size:11px;letter-spacing:.12em;color:#1E6FA8;margin:0 0 12px;}
 
-/* v10: 모든 페이지의 상단 제호에는 텍스트만 표시. 소개 페이지의 신문 목업과 “이름과 상징”에는 공식 로고를 유지. */
+/* v10: 紐⑤뱺 �섏씠吏��� �곷떒 �쒗샇�먮뒗 �띿뒪�몃쭔 �쒖떆. �뚭컻 �섏씠吏��� �좊Ц 紐⑹뾽怨� �쒖씠由꾧낵 �곸쭠�앹뿉�� 怨듭떇 濡쒓퀬瑜� �좎�. */
 
-/* CONTACT 제목은 한 줄로 표시하고 모바일에서는 크기를 자동 조정합니다. */
+/* CONTACT �쒕ぉ�� �� 以꾨줈 �쒖떆�섍퀬 紐⑤컮�쇱뿉�쒕뒗 �ш린瑜� �먮룞 議곗젙�⑸땲��. */
 .about-contact h2 { white-space: nowrap; }
 @media (max-width: 760px) {
   .about-contact h2 { font-size: clamp(17px, 5vw, 30px); }
 }
 
 
-/* v12: 뉴스 분야 확대 + 반응형 메뉴 + 소개 페이지 좌측 여백 정리 */
+/* v12: �댁뒪 遺꾩빞 �뺣� + 諛섏쓳�� 硫붾돱 + �뚭컻 �섏씠吏� 醫뚯륫 �щ갚 �뺣━ */
 .nav-inner{height:auto;min-height:52px;justify-content:center;}
 .nav-items{gap:clamp(10px,1.35vw,19px);align-items:center;justify-content:center;flex-wrap:wrap;padding:0;}
 .nav-item{height:52px;font-size:clamp(11px,.95vw,13px);}
@@ -492,7 +492,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
  .about-body h2{font-size:clamp(26px,6vw,33px);}
 }
 
-/* v13: 정확히 8개 공식 뉴스 분야, 드롭다운 없음 */
+/* v13: �뺥솗�� 8媛� 怨듭떇 �댁뒪 遺꾩빞, �쒕∼�ㅼ슫 �놁쓬 */
 .main-nav .nav-inner{width:100%;}
 .main-nav .nav-items{display:flex;flex-wrap:wrap;justify-content:center;gap:0 clamp(10px,1.2vw,18px);align-items:center;}
 .main-nav .nav-item{white-space:nowrap;}
@@ -502,7 +502,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 }
 
 
-/* DAWNURI v15 — 기자 소개 / 사진 설명 */
+/* DAWNURI v15 �� 湲곗옄 �뚭컻 / �ъ쭊 �ㅻ챸 */
 .byline-link{color:inherit;text-decoration:underline;text-decoration-color:#9bc8de;text-underline-offset:3px;text-decoration-thickness:1px}
 .byline-link:hover{color:#1E6FA8}
 .caption-img{max-width:850px;line-height:1.55;word-break:keep-all;color:#5b7181!important;font-size:12px!important;text-align:left!important;margin-top:9px!important;margin-bottom:28px!important}
@@ -539,8 +539,8 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 .inline-photo{margin:24px 0 30px}.inline-photo .article-inline-image{display:block;margin:0 auto;max-width:100%}.inline-photo figcaption{font-size:12px;color:#61788a;margin-top:9px;line-height:1.6}
 
 
-/* DAWNURI v16 — 푸터 링크를 가로 2~3줄로 정돈. 기존 v15 기능/데이터 그대로 유지. */
-/* 기존 4단 세로 목록을 2단 구획으로 재배치합니다. */
+/* DAWNURI v16 �� �명꽣 留곹겕瑜� 媛�濡� 2~3以꾨줈 �뺣룉. 湲곗〈 v15 湲곕뒫/�곗씠�� 洹몃�濡� �좎�. */
+/* 湲곗〈 4�� �몃줈 紐⑸줉�� 2�� 援ы쉷�쇰줈 �щ같移섑빀�덈떎. */
 .footer .footer-grid{
   grid-template-columns:minmax(0,1fr) minmax(0,1.04fr);
   gap:38px 64px;
@@ -564,12 +564,12 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
   font-size:13px;
   white-space:nowrap;
 }
-/* 언론 소개·기자 소개·신문 아카이브·기사 검색: 2열 × 2행 */
+/* �몃줎 �뚭컻쨌湲곗옄 �뚭컻쨌�좊Ц �꾩뭅�대툕쨌湲곗궗 寃���: 2�� 횞 2�� */
 .footer .footer-grid>.footer-links:nth-child(2){
   grid-column:1;grid-row:2;
   grid-template-columns:repeat(2,minmax(0,1fr));
 }
-/* 여덟 기사 분야: 3열 × 3행 */
+/* �щ뜜 湲곗궗 遺꾩빞: 3�� 횞 3�� */
 .footer .footer-grid>.footer-links:nth-child(3){
   grid-column:2;grid-row:2;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -588,7 +588,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
 }
 
 
-/* DAWNURI v18 — 단체 등록정보는 번호 입력 시에만 표시 */
+/* DAWNURI v18 �� �⑥껜 �깅줉�뺣낫�� 踰덊샇 �낅젰 �쒖뿉留� �쒖떆 */
 .footer-registration-info{
   display:flex;flex-wrap:wrap;align-items:center;column-gap:22px;row-gap:7px;
   padding:20px 0;margin-top:18px;border-top:1px solid rgba(255,255,255,.16);
@@ -681,4 +681,12 @@ a:focus-visible,button:focus-visible,input:focus-visible {outline:3px solid #2FA
   .footer-registration-info-heading,.footer-registration-info-details,.footer-registration-info-details>span{width:100%!important;text-align:left!important}
   .footer-lower-tagline{justify-self:start!important;align-items:flex-start!important;text-align:left!important;transform:none!important}
   .footer-copyright{text-align:left!important}
+}
+
+/* Homepage sections: balanced two-column flow */
+.spotlight{display:block;column-count:2;column-gap:32px;margin-bottom:100px}
+.spotlight .cat-strip{display:inline-block;width:100%;break-inside:avoid;vertical-align:top;margin-bottom:36px}
+@media(max-width:760px){
+  .spotlight{column-count:1;margin-bottom:60px}
+  .spotlight .cat-strip{margin-bottom:35px}
 }
