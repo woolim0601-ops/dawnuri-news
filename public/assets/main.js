@@ -5,7 +5,7 @@
     try{items=JSON.parse(homePickNode.textContent||'[]')}catch{}
     if(items.length){
       const shuffle=values=>{const copy=[...values];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy};
-      document.querySelectorAll('.cat-strip .strip-list').forEach(list=>{const cards=shuffle(Array.from(list.children));cards.forEach((card,index)=>{if(index<5)list.append(card);else card.remove()})});
+      document.querySelectorAll('.cat-strip .strip-list').forEach(list=>{const cards=shuffle(Array.from(list.children));cards.forEach((card,index)=>{if(index>=3){card.remove();return}list.append(card);if(!card.querySelector('.cover-wrap .cover-image')){card.querySelector('.cover-wrap')?.remove();const copy=card.querySelector('.news-card-copy');const title=copy?.querySelector('h3');if(copy&&title){copy.replaceChildren(title);card.style.display='block'}}})});
       const chosen=shuffle(items)[0];
       const categories={society:'사회',economy:'경제',sports:'스포츠',culture:'문화',world:'국제',local:'지역',education:'교육·청소년',feature:'기획'};
       const categoryNode=article=>{const el=document.createElement('span');el.className='eyebrow';const dot=document.createElement('i');dot.setAttribute('aria-hidden','true');el.append(dot,document.createTextNode(categories[article.category]||article.category||''));return el};
