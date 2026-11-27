@@ -30,52 +30,37 @@
   }
 })();
 
-/* 새벽누리 v17 — 푸터에 기자 전용 로그인 열 추가. 기존 기능은 그대로 유지. */
+/* 새벽누리 푸터: 분야 바로가기, 기자실 로그인, 기존 문의·단체 정보 유지 */
 (() => {
-  const footer = document.querySelector('.footer .footer-grid');
-  if (!footer || footer.querySelector('.footer-pressroom')) return;
-  const linkGroups = footer.querySelectorAll(':scope > .footer-links');
-  if (linkGroups.length < 2) return;
-
-  const column = document.createElement('div');
-  column.className = 'footer-links footer-pressroom';
-  const heading = document.createElement('h3');
-  heading.textContent = '기자 전용';
-  const link = document.createElement('a');
-  link.href = 'https://dawnuri-pressroom.maskstage-festival-2026.workers.dev/';
-  link.rel = 'noopener noreferrer';
-  link.textContent = '기자실 로그인 ↗';
-  link.setAttribute('aria-label', '새벽누리 기자실 로그인 페이지로 이동');
-  column.append(heading, link);
-  linkGroups[1].insertAdjacentElement('afterend', column);
-
-  const style = document.createElement('style');
-  style.textContent = `
-  /* 새벽누리 푸터 v17: 기존 제호, 링크, 기사 분야와 나란히 표시 */
-  .footer .footer-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.9fr) minmax(0,1.25fr) minmax(0,.82fr);column-gap:32px;row-gap:26px;align-items:start}
-  .footer .footer-grid>div:first-child{grid-column:1;grid-row:1;min-width:0}
-  .footer .footer-grid>.footer-links:nth-child(2){grid-column:2;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .footer .footer-grid>.footer-links:nth-child(3){grid-column:3;grid-row:1;grid-template-columns:repeat(3,minmax(0,1fr))}
-  .footer .footer-grid>.footer-pressroom{grid-column:4;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-width:0}
-  .footer .footer-grid>.footer-pressroom h3{margin:0 0 3px}
-  .footer .footer-grid>.footer-pressroom a{color:#c1d9e7;font-size:13px;line-height:1.5;text-decoration:underline;text-underline-offset:5px;white-space:normal}
-  .footer .footer-grid>.footer-pressroom a:hover,.footer .footer-grid>.footer-pressroom a:focus-visible{color:#fff}
-  .footer .footer-grid>.footer-cta{grid-column:1/-1;grid-row:2;border-top:1px solid rgba(201,222,235,.19);padding-top:22px;min-width:0}
-  @media(max-width:1050px){
-    .footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:29px 34px}
-    .footer .footer-grid>div:first-child{grid-column:1;grid-row:1}
-    .footer .footer-grid>.footer-links:nth-child(2){grid-column:2;grid-row:1}
-    .footer .footer-grid>.footer-links:nth-child(3){grid-column:1;grid-row:2}
-    .footer .footer-grid>.footer-pressroom{grid-column:2;grid-row:2}
-    .footer .footer-grid>.footer-cta{grid-column:1/-1;grid-row:3}
-  }
-  @media(max-width:650px){
-    .footer .footer-grid{grid-template-columns:minmax(0,1fr);gap:29px}
-    .footer .footer-grid>div:first-child{grid-column:1;grid-row:1}
-    .footer .footer-grid>.footer-links:nth-child(2){grid-column:1;grid-row:2}
-    .footer .footer-grid>.footer-links:nth-child(3){grid-column:1;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr))}
-    .footer .footer-grid>.footer-pressroom{grid-column:1;grid-row:4}
-    .footer .footer-grid>.footer-cta{grid-column:1;grid-row:5}
-  }`;
+  const footer=document.querySelector('.footer');
+  const grid=footer?.querySelector('.footer-grid');
+  if(!footer||!grid||footer.querySelector('.footer-category-nav'))return;
+  const groups=Array.from(grid.querySelectorAll(':scope > .footer-links'));
+  const pages=groups[0],categories=groups.find(group=>group.querySelector('h3')?.textContent.trim()==='기사 분야')||groups[1];
+  const categoryLinks=Array.from(categories?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
+  const pageLinks=Array.from(pages?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
+  const contact=footer.querySelector('.footer-contact-card .light-link');
+  if(contact){const link=contact.cloneNode(true);link.textContent='기사 제보';pageLinks.push(link)}
+  const categoryNav=document.createElement('nav');
+  categoryNav.className='footer-category-nav';
+  categoryNav.setAttribute('aria-label','기사 분야 바로가기');
+  categoryLinks.forEach(link=>categoryNav.append(link));
+  const account=document.createElement('div');
+  account.className='footer-account-row';
+  account.setAttribute('aria-label','기자실 계정');
+  const pressroom=grid.querySelector('.footer-pressroom');
+  const login=pressroom?.querySelector('a');
+  if(login)account.append(login.cloneNode(true));
+  const utility=document.createElement('nav');
+  utility.className='footer-utility-nav';
+  utility.setAttribute('aria-label','새벽누리 안내');
+  pageLinks.forEach(link=>utility.append(link));
+  groups.forEach(group=>group.remove());
+  pressroom?.remove();
+  grid.insertAdjacentElement('afterend',categoryNav);
+  if(account.childElementCount)categoryNav.insertAdjacentElement('afterend',account);
+  (account.childElementCount?account:categoryNav).insertAdjacentElement('afterend',utility);
+  const style=document.createElement('style');
+  style.textContent=".footer .footer-grid{display:block!important;grid-template-columns:1fr!important;gap:0!important}\n.footer .footer-grid>div:first-child{max-width:640px;margin:0 auto 30px;text-align:center}\n.footer .footer-grid>div:first-child .footer-brand{display:inline-block;margin-bottom:8px}\n.footer .footer-grid>div:first-child .foot-desc{margin-top:12px!important}\n.footer-category-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 auto 28px;max-width:1050px}\n.footer-category-nav a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px 10px;border:1px solid rgba(207,227,238,.35);border-radius:12px;color:#e4f2f8;font-size:15px;font-weight:700;transition:background .18s,border-color .18s}\n.footer-category-nav a:hover,.footer-category-nav a:focus-visible{background:rgba(119,202,221,.12);border-color:#79cde0;color:#fff}\n.footer-account-row{display:flex;justify-content:center;margin:0 auto 24px}\n.footer-account-row a{display:inline-flex;align-items:center;justify-content:center;min-width:250px;min-height:52px;padding:11px 28px;border:1px solid rgba(235,247,252,.8);border-radius:999px;color:#fff;font-size:16px;font-weight:700}\n.footer-account-row a:hover,.footer-account-row a:focus-visible{background:rgba(255,255,255,.1);color:#fff}\n.footer-utility-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0;margin:0 auto 28px;padding:0}\n.footer-utility-nav a{padding:5px 15px;color:#c8dbe4;font-size:13px;line-height:1.5}\n.footer-utility-nav a+a{border-left:1px solid rgba(220,237,244,.35)}\n.footer-utility-nav a:hover,.footer-utility-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}\n@media(max-width:760px){\n.footer .footer-grid>div:first-child{margin-bottom:24px}\n.footer-category-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:22px}\n.footer-category-nav a{min-height:52px;font-size:14px}\n.footer-account-row{margin-bottom:20px}\n.footer-account-row a{min-width:220px}\n.footer-utility-nav{margin-bottom:24px}\n.footer-utility-nav a{padding:6px 10px}\n}";
   document.head.appendChild(style);
 })();
