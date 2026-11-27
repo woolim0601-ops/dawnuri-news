@@ -30,13 +30,14 @@
   }
 })();
 
-/* 새벽누리 푸터: 분야 바로가기, 기자실 로그인, 기존 문의·단체 정보 유지 */
+/* 새벽누리 하단 푸터: 분야, 기자실, 안내 링크와 단체 정보 */
 (() => {
   const footer=document.querySelector('.footer');
   const grid=footer?.querySelector('.footer-grid');
   if(!footer||!grid||footer.querySelector('.footer-category-nav'))return;
   const groups=Array.from(grid.querySelectorAll(':scope > .footer-links'));
-  const pages=groups[0],categories=groups.find(group=>group.querySelector('h3')?.textContent.trim()==='기사 분야')||groups[1];
+  const pages=groups[0];
+  const categories=groups.find(group=>group.querySelector('h3')?.textContent.trim()==='기사 분야')||groups[1];
   const categoryLinks=Array.from(categories?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
   const pageLinks=Array.from(pages?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
   const contact=footer.querySelector('.footer-contact-card .light-link');
@@ -60,7 +61,29 @@
   grid.insertAdjacentElement('afterend',categoryNav);
   if(account.childElementCount)categoryNav.insertAdjacentElement('afterend',account);
   (account.childElementCount?account:categoryNav).insertAdjacentElement('afterend',utility);
+  const meta=footer.querySelector('.footer-registration-info');
+  const details=meta?.querySelector('.footer-registration-info-details');
+  if(meta&&details){
+    const oldValues=Array.from(details.querySelectorAll('span')).map(n=>n.textContent.trim());
+    const number=oldValues.find(s=>/\d{3}-\d{2}-\d{5}/.test(s))?.match(/\d{3}-\d{2}-\d{5}/)?.[0]||'104-82-79386';
+    meta.querySelector('.footer-registration-info-heading')?.remove();
+    details.replaceChildren();
+    const rows=[
+      [['단체명','새벽누리'],['발행인','김우림']],
+      [['고유번호',number],['문의','dawnuri.nw@gmail.com']]
+    ];
+    rows.forEach(items=>{
+      const row=document.createElement('div');
+      row.className='footer-registration-line';
+      items.forEach(([label,value])=>{
+        const span=document.createElement('span');
+        span.textContent=label+': '+value;
+        row.append(span);
+      });
+      details.append(row);
+    });
+  }
   const style=document.createElement('style');
-  style.textContent=".footer .footer-grid{display:block!important;grid-template-columns:1fr!important;gap:0!important}\n.footer .footer-grid>div:first-child{max-width:640px;margin:0 auto 30px;text-align:center}\n.footer .footer-grid>div:first-child .footer-brand{display:inline-block;margin-bottom:8px}\n.footer .footer-grid>div:first-child .foot-desc{margin-top:12px!important}\n.footer-category-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 auto 28px;max-width:1050px}\n.footer-category-nav a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:12px 10px;border:1px solid rgba(207,227,238,.35);border-radius:12px;color:#e4f2f8;font-size:15px;font-weight:700;transition:background .18s,border-color .18s}\n.footer-category-nav a:hover,.footer-category-nav a:focus-visible{background:rgba(119,202,221,.12);border-color:#79cde0;color:#fff}\n.footer-account-row{display:flex;justify-content:center;margin:0 auto 24px}\n.footer-account-row a{display:inline-flex;align-items:center;justify-content:center;min-width:250px;min-height:52px;padding:11px 28px;border:1px solid rgba(235,247,252,.8);border-radius:999px;color:#fff;font-size:16px;font-weight:700}\n.footer-account-row a:hover,.footer-account-row a:focus-visible{background:rgba(255,255,255,.1);color:#fff}\n.footer-utility-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0;margin:0 auto 28px;padding:0}\n.footer-utility-nav a{padding:5px 15px;color:#c8dbe4;font-size:13px;line-height:1.5}\n.footer-utility-nav a+a{border-left:1px solid rgba(220,237,244,.35)}\n.footer-utility-nav a:hover,.footer-utility-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}\n@media(max-width:760px){\n.footer .footer-grid>div:first-child{margin-bottom:24px}\n.footer-category-nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:22px}\n.footer-category-nav a{min-height:52px;font-size:14px}\n.footer-account-row{margin-bottom:20px}\n.footer-account-row a{min-width:220px}\n.footer-utility-nav{margin-bottom:24px}\n.footer-utility-nav a{padding:6px 10px}\n}";
+  style.textContent=".footer .footer-grid{display:block!important;grid-template-columns:1fr!important;gap:0!important}\n.footer .footer-grid>div:first-child{max-width:640px;margin:0 auto 30px;text-align:center}\n.footer .footer-grid>div:first-child .footer-brand{display:inline-block;margin-bottom:8px}\n.footer .footer-grid>div:first-child .foot-desc{margin-top:12px!important}\n.footer-category-nav{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin:0 auto 24px;max-width:none}\n.footer-category-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:7px 5px;border:1px solid rgba(207,227,238,.35);border-radius:10px;color:#e4f2f8;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:inherit;line-height:1.4;white-space:nowrap;transition:background .18s,border-color .18s}\n.footer-category-nav a:hover,.footer-category-nav a:focus-visible{background:rgba(119,202,221,.12);border-color:#79cde0;color:#fff}\n.footer-account-row{display:flex;justify-content:center;margin:0 auto 24px}\n.footer-account-row a{display:inline-flex;align-items:center;justify-content:center;min-width:220px;min-height:48px;padding:9px 25px;border:1px solid rgba(235,247,252,.8);border-radius:999px;color:#fff;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:inherit;line-height:1.5}\n.footer-account-row a:hover,.footer-account-row a:focus-visible{background:rgba(255,255,255,.1);color:#fff}\n.footer-utility-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:0;margin:0 auto 28px;padding:0}\n.footer-utility-nav a{padding:5px 15px;color:#c8dbe4;font-family:inherit;font-size:13px;font-weight:400;letter-spacing:inherit;line-height:1.5}\n.footer-utility-nav a+a{border-left:1px solid rgba(220,237,244,.35)}\n.footer-utility-nav a:hover,.footer-utility-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}\n.footer-lower .footer-registration-info{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;grid-column:2!important;grid-row:1!important;padding:0!important;margin:0!important;border:0!important;text-align:center!important;opacity:1!important}\n.footer-registration-info-heading{display:none!important}\n.footer-lower .footer-registration-info-details{display:grid!important;gap:5px!important;width:100%!important;font-size:13px!important;line-height:1.7!important;color:#a9bdc6!important}\n.footer-registration-info-details .footer-registration-line{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:4px 12px!important;width:100%!important;text-align:center!important}\n.footer-registration-info-details .footer-registration-line>span{display:inline-block!important;width:auto!important;text-align:center!important}\n.footer-registration-line>span+span:before{content:\"|\";margin-right:12px;color:rgba(220,237,244,.4)}\n.footer-lower-tagline{text-align:right}\n@media(max-width:760px){\n .footer .footer-grid>div:first-child{margin-bottom:24px}\n .footer-category-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-bottom:20px}\n .footer-category-nav a{min-height:40px;padding:6px 3px;font-size:11px}\n .footer-account-row{margin-bottom:20px}\n .footer-utility-nav{margin-bottom:24px}\n .footer-utility-nav a{padding:6px 10px}\n .footer-lower .footer-registration-info{grid-column:1!important;grid-row:auto!important;align-items:flex-start!important;text-align:left!important}\n .footer-registration-info-details .footer-registration-line{justify-content:flex-start!important;text-align:left!important}\n .footer-registration-info-details .footer-registration-line>span{text-align:left!important}\n .footer-lower-tagline{text-align:left}\n}\n@media(max-width:420px){.footer-category-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}";
   document.head.appendChild(style);
 })();
