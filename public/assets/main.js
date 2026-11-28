@@ -40,8 +40,6 @@
   const categories=groups.find(group=>group.querySelector('h3')?.textContent.trim()==='기사 분야')||groups[1];
   const categoryLinks=Array.from(categories?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
   const pageLinks=Array.from(pages?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
-  const contact=footer.querySelector('.footer-contact-card .light-link');
-  if(contact){const link=contact.cloneNode(true);link.textContent='기사 제보';pageLinks.push(link)}
   const categoryNav=document.createElement('nav');
   categoryNav.className='footer-category-nav';
   categoryNav.setAttribute('aria-label','기사 분야 바로가기');
@@ -99,7 +97,7 @@
 .footer-account-row{grid-column:2;display:flex;justify-content:center;margin:0}
 .footer-account-row a{display:inline-flex;align-items:center;justify-content:center;min-width:220px;min-height:48px;padding:9px 25px;border:1px solid rgba(235,247,252,.8);border-radius:999px;color:#fff;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:inherit;line-height:1.5}
 .footer-account-row a:hover,.footer-account-row a:focus-visible{background:rgba(255,255,255,.1);color:#fff}
-.footer-utility-nav{grid-column:3;display:grid;width:100%;grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch;justify-items:end;align-items:start;gap:8px 16px;margin:0;padding:0}
+.footer-utility-nav{grid-column:3;display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch;justify-items:end;align-items:start;gap:8px 16px;margin:0;padding:0}
 .footer-utility-nav a{padding:4px 0;color:#c8dbe4;font-family:inherit;font-size:13px;font-weight:400;letter-spacing:inherit;line-height:1.5;white-space:nowrap}
 .footer-utility-nav a:hover,.footer-utility-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .footer-lower .footer-registration-info{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;grid-column:2!important;grid-row:1!important;padding:0!important;margin:0!important;border:0!important;text-align:center!important;opacity:1!important}
