@@ -39,7 +39,7 @@
   const pages=groups[0];
   const categories=groups.find(group=>group.querySelector('h3')?.textContent.trim()==='기사 분야')||groups[1];
   const categoryLinks=Array.from(categories?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
-  const pageLinks=Array.from(pages?.querySelectorAll('a')||[]).map(a=>a.cloneNode(true));
+  const pageLinks=Array.from(pages?.querySelectorAll('a')||[]).filter(a=>a.textContent.trim()!=='기사 제보').map(a=>a.cloneNode(true));
   const categoryNav=document.createElement('nav');
   categoryNav.className='footer-category-nav';
   categoryNav.setAttribute('aria-label','기사 분야 바로가기');
@@ -87,9 +87,10 @@
   const style=document.createElement('style');
   style.textContent = `
 .footer .footer-grid{display:block!important;grid-template-columns:1fr!important;gap:0!important}
-.footer .footer-grid>div:first-child{max-width:640px;margin:0 auto 30px;text-align:center}
-.footer .footer-grid>div:first-child .footer-brand{display:inline-block;margin-bottom:8px}
-.footer .footer-grid>div:first-child .foot-desc{margin-top:12px!important}
+.footer .footer-grid>div:first-child{display:grid!important;grid-template-columns:max-content minmax(0,1fr)!important;grid-template-rows:auto auto!important;align-items:center!important;column-gap:clamp(14px,2.5vw,30px)!important;row-gap:4px!important;width:100%!important;max-width:none!important;margin:0 auto 30px!important;text-align:left!important}
+.footer .footer-grid>div:first-child .footer-brand{grid-column:1!important;grid-row:1/3!important;display:block!important;align-self:center!important;margin:0!important;white-space:nowrap!important}
+.footer .footer-grid>div:first-child>p:not(.foot-desc){grid-column:2!important;grid-row:1!important;margin:0!important}
+.footer .footer-grid>div:first-child .foot-desc{grid-column:2!important;grid-row:2!important;margin:0!important}
 .footer-nav-layout{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,38px);margin:0 auto 24px;width:100%}
 .footer-category-nav{display:grid;grid-column:1;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));justify-content:stretch;align-items:start;gap:8px 16px;margin:0;padding:0}
 .footer-category-nav a{display:flex;align-items:center;justify-content:flex-start;min-height:30px;padding:3px 0;border:0;border-radius:0;background:transparent;color:#e4f2f8;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:inherit;line-height:1.4;white-space:nowrap;transition:color .18s}
@@ -108,7 +109,9 @@
 .footer-registration-line>span+span:before{content:"|";margin-right:12px;color:rgba(220,237,244,.4)}
 .footer-lower-tagline{text-align:right}
 @media(max-width:760px){
- .footer .footer-grid>div:first-child{margin-bottom:24px}
+ .footer .footer-grid>div:first-child{grid-template-columns:max-content minmax(0,1fr)!important;column-gap:12px!important;row-gap:3px!important;margin-bottom:24px!important}
+ .footer .footer-grid>div:first-child .footer-brand{font-size:clamp(20px,5vw,28px)!important}
+ .footer .footer-grid>div:first-child>p:not(.foot-desc),.footer .footer-grid>div:first-child .foot-desc{font-size:clamp(10px,2.7vw,13px)!important;line-height:1.5!important}
  .footer-nav-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:20px 12px;margin-bottom:20px}
  .footer-category-nav{grid-column:1;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 12px}
  .footer-category-nav a{min-height:36px;padding:4px 0;font-size:11px}
