@@ -93,13 +93,13 @@
 .footer .footer-grid>div:first-child .footer-brand{display:inline-block;margin-bottom:8px}
 .footer .footer-grid>div:first-child .foot-desc{margin-top:12px!important}
 .footer-nav-layout{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,38px);margin:0 auto 24px;width:100%}
-.footer-category-nav{display:grid;grid-column:1;grid-template-columns:repeat(4,minmax(0,max-content));justify-content:start;align-items:start;gap:8px 28px;margin:0;padding:0}
+.footer-category-nav{display:grid;grid-column:1;width:100%;grid-template-columns:repeat(4,minmax(0,1fr));justify-content:stretch;align-items:start;gap:8px 16px;margin:0;padding:0}
 .footer-category-nav a{display:flex;align-items:center;justify-content:flex-start;min-height:30px;padding:3px 0;border:0;border-radius:0;background:transparent;color:#e4f2f8;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:inherit;line-height:1.4;white-space:nowrap;transition:color .18s}
 .footer-category-nav a:hover,.footer-category-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .footer-account-row{grid-column:2;display:flex;justify-content:center;margin:0}
 .footer-account-row a{display:inline-flex;align-items:center;justify-content:center;min-width:220px;min-height:48px;padding:9px 25px;border:1px solid rgba(235,247,252,.8);border-radius:999px;color:#fff;font-family:inherit;font-size:13px;font-weight:600;letter-spacing:inherit;line-height:1.5}
 .footer-account-row a:hover,.footer-account-row a:focus-visible{background:rgba(255,255,255,.1);color:#fff}
-.footer-utility-nav{grid-column:3;display:grid;grid-template-columns:repeat(3,max-content);justify-content:end;align-items:start;gap:8px 22px;margin:0;padding:0}
+.footer-utility-nav{grid-column:3;display:grid;width:100%;grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch;justify-items:end;align-items:start;gap:8px 16px;margin:0;padding:0}
 .footer-utility-nav a{padding:4px 0;color:#c8dbe4;font-family:inherit;font-size:13px;font-weight:400;letter-spacing:inherit;line-height:1.5;white-space:nowrap}
 .footer-utility-nav a:hover,.footer-utility-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}
 .footer-lower .footer-registration-info{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;grid-column:2!important;grid-row:1!important;padding:0!important;margin:0!important;border:0!important;text-align:center!important;opacity:1!important}
