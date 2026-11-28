@@ -37,7 +37,7 @@ a:hover{color:var(--red)}
 .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;display:flex;align-items:center;justify-content:center;min-width:340px}
 .brand-mark{display:none}
 .brand-copy{align-items:center;gap:0}
-.brand-copy:before{content:'DAWNURI  쨌  INDEPENDENT YOUTH PRESS';font:700 10px Georgia,serif;letter-spacing:.21em;color:#9c5962;margin-bottom:10px;white-space:nowrap}
+.brand-copy:before{content:'DAWNURI INDEPENDENT YOUTH PRESS';font:700 10px Georgia,serif;letter-spacing:.21em;color:#9c5962;margin-bottom:10px;white-space:nowrap}
 .brand-name{font-family:var(--editorial-serif);font-size:55px;letter-spacing:-.095em;font-weight:800;line-height:1.22;color:#1e2730}
 .brand-dot{color:var(--red)}
 .brand-tag{margin-top:4px;font-size:11px;color:#717775;letter-spacing:.09em;font-weight:500}
