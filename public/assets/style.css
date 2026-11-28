@@ -204,7 +204,7 @@ a:hover{color:var(--red)}
 }
 body { font-family: var(--font); font-size: 14px; letter-spacing: -0.012em; }
 button, input, textarea, select { font-family: var(--font); }
-.brand-copy:before { font-family: 'Paperlogy', var(--font); font-weight: 700; letter-spacing: .16em; }
+.brand-copy:before { font-family: Arial, sans-serif; font-weight: 700; letter-spacing: .16em; }
 .brand-name { font-family: var(--editorial-serif); font-size: 53px; font-weight: 800; letter-spacing: -.075em; line-height: 1.24; }
 .brand-tag { font-family: var(--font); font-weight: 500; letter-spacing: .01em; }
 .nav-item { font-weight: 700; letter-spacing: -.035em; }
@@ -213,7 +213,7 @@ button, input, textarea, select { font-family: var(--font); }
 .side-top h3 { font-weight: 700; letter-spacing: -.038em; }
 .block-head h2 { font-weight: 800; letter-spacing: -.052em; }
 .latest-body h3 { font-weight: 700; letter-spacing: -.035em; }
-.latest-num,.pick-number { font-family: 'Paperlogy', var(--font); font-style: normal; }
+.latest-num,.pick-number { font-family: Arial, sans-serif; font-style: normal; }
 .article-title-area h1 { font-size: 41px; font-weight: 800; line-height: 1.46; letter-spacing: -.05em; }
 .article-prose { font-family: var(--font); font-size: 17px; line-height: 2.0; letter-spacing: -.016em; }
 .article-prose p:first-child { font-weight: 600; font-size: 19px; }
