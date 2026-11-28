@@ -70,7 +70,7 @@
     meta.querySelector('.footer-registration-info-heading')?.remove();
     details.replaceChildren();
     const rows=[
-      [['단체명','새벽누리'],['발행인','김우림']],
+      [['법인명','새벽누리'],['발행인','김우림']],
       [['고유번호',number],['문의','dawnuri.nw@gmail.com']]
     ];
     rows.forEach(items=>{
